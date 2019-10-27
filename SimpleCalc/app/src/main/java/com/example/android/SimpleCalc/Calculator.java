@@ -52,4 +52,11 @@ public class Calculator {
     public double mul(double firstOperand, double secondOperand) {
         return firstOperand * secondOperand;
     }
+
+    /**
+     * Power operation
+     */
+    public double power(double firstOperand, double secondOperand) {
+        return Math.pow(firstOperand, secondOperand);
+    }
 }
