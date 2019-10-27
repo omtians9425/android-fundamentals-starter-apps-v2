@@ -97,11 +97,14 @@ public class CalculatorTest {
         assertThat(result, is(equalTo(5d)));
     }
 
-    @Test
-    public void divTwoNumbersZero() {
-        double result = mCalculator.div(15d, 0d);
-        assertThat(result, is(equalTo(Double.POSITIVE_INFINITY)));
+//    @Test
+//    public void divTwoNumbersZero() {
+//        double result = mCalculator.div(15d, 0d);
+//        assertThat(result, is(equalTo(Double.POSITIVE_INFINITY)));
+//    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void divByZeroThrows() {
+        double result = mCalculator.div(45d, 0);
     }
-
-
 }
