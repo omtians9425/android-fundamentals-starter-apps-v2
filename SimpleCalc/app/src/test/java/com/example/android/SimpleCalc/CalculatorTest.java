@@ -107,4 +107,46 @@ public class CalculatorTest {
     public void divByZeroThrows() {
         double result = mCalculator.div(45d, 0);
     }
+
+    @Test
+    public void powTwoNumbers() {
+        double result = mCalculator.pow(5d, 4d);
+        assertThat(result, is(equalTo(625d)));
+    }
+
+    @Test
+    public void poTwoNumbersFirstNegative() {
+        double result = mCalculator.pow(-5d, 3d);
+        assertThat(result, is(equalTo(-125d)));
+    }
+
+    @Test
+    public void poTwoNumbersSecondNegative() {
+        double result = mCalculator.pow(5d, -2d);
+        assertThat(result, is(equalTo(0.04d)));
+    }
+
+    @Test
+    public void poTwoNumbersFirstZero() {
+        double result = mCalculator.pow(0d, 2d);
+        assertThat(result, is(equalTo(0d)));
+    }
+
+    @Test
+    public void poTwoNumbersSecondZero() {
+        double result = mCalculator.pow(5d, 0d);
+        assertThat(result, is(equalTo(1d)));
+    }
+
+    @Test
+    public void poTwoNumbersZeroAndMinus() {
+        double result = mCalculator.pow(0d, -1d);
+        assertThat(result, is(equalTo(Double.POSITIVE_INFINITY)));
+    }
+
+    @Test
+    public void poTwoNumbersMinusZeroAndNegative() {
+        double result = mCalculator.pow(-0d, -1d);
+        assertThat(result, is(equalTo(Double.NEGATIVE_INFINITY)));
+    }
 }
